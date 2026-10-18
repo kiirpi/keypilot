@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+
+# Uygulama bundle
+*.app/
+
+# İkon dosyaları (DALL-E'den indirilenler)
+*.png
+*.icns
+
+# Derlenmiş dosyalar
+*.o
+*.swp
+*~
