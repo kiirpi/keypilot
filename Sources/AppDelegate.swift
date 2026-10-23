@@ -1,6 +1,7 @@
 import Cocoa
 import Carbon
 import UserNotifications
+import ServiceManagement
 
 /// Bir uygulama-klavye atamasını temsil eden basit sınıf (ObjC bridge uyumlu)
 private final class AssignmentInfo {
@@ -130,6 +131,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(.separator())
 
+        // Açılışta başlat toggle
+        let launchItem = NSMenuItem(title: "Açılışta Başlat", action: #selector(toggleLaunchAtStartup), keyEquivalent: "")
+        launchItem.target = self
+        launchItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
+        menu.addItem(launchItem)
+
         // Çıkış
         let quitItem = NSMenuItem(title: "Çık", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         menu.addItem(quitItem)
@@ -188,6 +195,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         NSWorkspace.shared.open(URL(fileURLWithPath: configPath))
+    }
+
+    @objc private func toggleLaunchAtStartup() {
+        do {
+            if SMAppService.mainApp.status == .enabled {
+                try SMAppService.mainApp.unregister()
+            } else {
+                try SMAppService.mainApp.register()
+            }
+            updateMenu()
+        } catch {
+            print("Açılışta başlat ayarı değiştirilemedi: \(error)")
+        }
     }
 
     private func showNotification(title: String, message: String) {

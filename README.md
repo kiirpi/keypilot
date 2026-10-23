@@ -8,6 +8,7 @@ macOS'ta her uygulama için farklı klavye düzeni otomatik seçimi yapan menü 
 - 🔄 Uygulama geçişlerinde otomatik klavye değişimi
 - 💾 Atamalar JSON dosyasında saklanır
 - ⌨️ Menü bar'dan kolay yönetim
+- 🚀 Açılışta otomatik başlatma desteği
 
 ## Derleme
 
@@ -75,12 +76,19 @@ Mevcut klavye düzenlerinin ID'lerini görmek için:
 
 ## Otomatik Başlatma
 
-Uygulamanın her açılışta başlaması için:
+### Menü bar'dan (önerilen)
+
+1. Menü bar ikonuna tıklayın
+2. **"Açılışta Başlat"** seçeneğini işaretleyin ✓
+
+Bu tek adımda uygulamayı macOS Login Items'a kaydeder. Kaldırmak için aynı menüyü tekrar tıklayın.
+
+### Manuel (Sistem Tercihleri)
 
 1. **Sistem Tercihleri** > **Kullanıcılar ve Gruplar** > **Giriş Öğeleri**
 2. `ChooseKeyboardForApp.app` dosyasını sürükleyip bırakın
 
-Veya `launchd` ile:
+### launchd ile
 
 ```bash
 # ~/Library/LaunchAgents/com.kulucka.ChooseKeyboardForApp.plist oluştur
