@@ -34,7 +34,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "Keyboard")
+            button.image = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "KeyPilot")
             button.image?.size = NSSize(width: 18, height: 18)
         }
 

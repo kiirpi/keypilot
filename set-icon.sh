@@ -22,7 +22,7 @@ if [ -z "$1" ]; then
 fi
 
 INPUT_PNG="$1"
-APP_NAME="ChooseKeyboardForApp"
+APP_NAME="KeyPilot"
 APP_BUNDLE="${APP_NAME}.app"
 ICONSET_DIR="${APP_BUNDLE}/Contents/Resources/AppIcon.iconset"
 ICNS_FILE="${APP_BUNDLE}/Contents/Resources/AppIcon.icns"

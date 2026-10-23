@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "ChooseKeyboardForApp",
+    name: "KeyPilot",
     platforms: [.macOS(.v13)],
     targets: [
         .executableTarget(
-            name: "ChooseKeyboardForApp",
+            name: "KeyPilot",
             path: "Sources"
         )
     ]

@@ -1,4 +1,4 @@
-# Choose Keyboard For App
+# KeyPilot
 
 macOS'ta her uygulama için farklı klavye düzeni otomatik seçimi yapan menü bar uygulaması.
 
@@ -33,7 +33,7 @@ Bu komut:
 
 1. Uygulamayı başlat:
    ```bash
-   open ChooseKeyboardForApp.app
+   open KeyPilot.app
    ```
 
 2. Menü bar'da klavye ikonunu göreceksiniz
@@ -53,7 +53,7 @@ Bu komut:
 
 Atamalar şu dosyada saklanır:
 ```
-~/Library/Application Support/ChooseKeyboardForApp/config.json
+~/Library/Application Support/KeyPilot/config.json
 ```
 
 Örnek:
@@ -86,22 +86,22 @@ Bu tek adımda uygulamayı macOS Login Items'a kaydeder. Kaldırmak için aynı 
 ### Manuel (Sistem Tercihleri)
 
 1. **Sistem Tercihleri** > **Kullanıcılar ve Gruplar** > **Giriş Öğeleri**
-2. `ChooseKeyboardForApp.app` dosyasını sürükleyip bırakın
+2. `KeyPilot.app` dosyasını sürükleyip bırakın
 
 ### launchd ile
 
 ```bash
-# ~/Library/LaunchAgents/com.kulucka.ChooseKeyboardForApp.plist oluştur
-cat > ~/Library/LaunchAgents/com.kulucka.ChooseKeyboardForApp.plist << 'EOF'
+# ~/Library/LaunchAgents/com.kulucka.KeyPilot.plist oluştur
+cat > ~/Library/LaunchAgents/com.kulucka.KeyPilot.plist << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.kulucka.ChooseKeyboardForApp</string>
+    <string>com.kulucka.KeyPilot</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/path/to/ChooseKeyboardForApp.app/Contents/MacOS/ChooseKeyboardForApp</string>
+        <string>/path/to/KeyPilot.app/Contents/MacOS/KeyPilot</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -110,7 +110,7 @@ cat > ~/Library/LaunchAgents/com.kulucka.ChooseKeyboardForApp.plist << 'EOF'
 EOF
 
 # Yükle
-launchctl load ~/Library/LaunchAgents/com.kulucka.ChooseKeyboardForApp.plist
+launchctl load ~/Library/LaunchAgents/com.kulucka.KeyPilot.plist
 ```
 
 ## Gereksinimler
@@ -155,7 +155,7 @@ Script otomatik olarak:
 Sonra:
 ```bash
 killall Finder
-open ChooseKeyboardForApp.app
+open KeyPilot.app
 ```
 
 ## Sorun Giderme
@@ -164,7 +164,7 @@ open ChooseKeyboardForApp.app
 
 1. Uygulamanın çalıştığından emin olun (menü bar'da ikon var mı?)
 2. Klavye düzeninin Sistem Tercihleri'nde eklenmiş olduğundan emin olun
-3. Config dosyasını kontrol edin: `~/Library/Application Support/ChooseKeyboardForApp/config.json`
+3. Config dosyasını kontrol edin: `~/Library/Application Support/KeyPilot/config.json`
 
 ### Menü bar'da görünmüyor
 

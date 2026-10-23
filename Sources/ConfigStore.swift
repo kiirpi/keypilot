@@ -7,7 +7,7 @@ final class ConfigStore {
 
     init() {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        configDir = appSupport.appendingPathComponent("ChooseKeyboardForApp")
+        configDir = appSupport.appendingPathComponent("KeyPilot")
         configFile = configDir.appendingPathComponent("config.json")
 
         load()

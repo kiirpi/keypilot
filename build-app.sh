@@ -2,7 +2,7 @@
 
 set -e
 
-APP_NAME="ChooseKeyboardForApp"
+APP_NAME="KeyPilot"
 BUILD_DIR=".build/release"
 APP_BUNDLE="${APP_NAME}.app"
 
@@ -27,11 +27,11 @@ cat > "${APP_BUNDLE}/Contents/Info.plist" << 'EOF'
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>ChooseKeyboardForApp</string>
+    <string>KeyPilot</string>
     <key>CFBundleDisplayName</key>
-    <string>Choose Keyboard For App</string>
+    <string>KeyPilot</string>
     <key>CFBundleIdentifier</key>
-    <string>com.kulucka.ChooseKeyboardForApp</string>
+    <string>com.kulucka.KeyPilot</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleShortVersionString</key>
@@ -39,7 +39,7 @@ cat > "${APP_BUNDLE}/Contents/Info.plist" << 'EOF'
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleExecutable</key>
-    <string>ChooseKeyboardForApp</string>
+    <string>KeyPilot</string>
     <key>LSMinimumSystemVersion</key>
     <string>13.0</string>
     <key>LSUIElement</key>
